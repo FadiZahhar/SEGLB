@@ -1,0 +1,52 @@
+.moroco-slice1, .moroco-slice2, .moroco-slice4, .moroco-slice5, .moroco-slice6, .moroco-slice7, .moroco-slice8, .mororco-slice3{
+	background: url(sprites.png) no-repeat;
+}
+
+.moroco-slice1{
+	background-position: -1px -128px ;
+	width: 206px;
+	height: 194px;
+}
+
+.moroco-slice2{
+	background-position: -214px -131px ;
+	width: 206px;
+	height: 122px;
+}
+
+.moroco-slice4{
+	background-position: -643px -3px ;
+	width: 208px;
+	height: 301px;
+}
+
+.moroco-slice5{
+	background-position: -209px -258px ;
+	width: 207px;
+	height: 158px;
+}
+
+.moroco-slice6{
+	background-position: -426px -2px ;
+	width: 207px;
+	height: 194px;
+}
+
+.moroco-slice7{
+	background-position: -428px -201px ;
+	width: 170px;
+	height: 286px;
+}
+
+.moroco-slice8{
+	background-position: -213px -1px ;
+	width: 170px;
+	height: 123px;
+}
+
+.mororco-slice3{
+	background-position: 0 0;
+	width: 207px;
+	height: 122px;
+}
+

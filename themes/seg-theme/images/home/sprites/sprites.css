@@ -1,0 +1,53 @@
+.box-left, .box-med-left-1, .box-med-right, .careers-box-icon, .latest-news-box, .logo {
+	background: url(sprites.png) no-repeat;
+}
+
+.box-left{
+	background-position: -335px -203px ;
+	width: 336px;
+	height: 335px;
+}
+
+.box-med-left-1{
+	background-position: -166px -201px ;
+	width: 162px;
+	height: 162px;
+	margin-bottom:5px;
+}
+
+.box-med-right{
+	background-position: 0 -162px ;
+	width: 162px;
+	height: 329px;
+	margin-bottom:5px;
+}
+
+.careers-box-icon{
+	background-position: 0 0;
+	width: 162px;
+	height: 162px;
+}
+
+.latest-news-box{
+	background-position: -676px 0;
+	width: 335px;
+	height: 510px;
+}
+
+.logo{
+	background-position: -166px 0;
+	width: 164px;
+	height: 29px;
+	display:inline-block;
+	margin-top:15px;
+}
+
+.our-services-box-icon{
+	width: 201.5%;
+	height: 163px;
+	background-color:#ebf1f6;
+	position:absolute;
+	margin-top:343px;
+	background-repeat:no-repeat;
+	background-position:center center;
+}

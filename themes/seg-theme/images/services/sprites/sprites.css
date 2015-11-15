@@ -1,0 +1,43 @@
+.electrical-work-icon, .infrastructure-icon, .main-contracting-icon, .oil-info, .power-plants-info, .power-system-info, .roads-info {
+	background: url(sprites.png) no-repeat;
+}
+
+.electrical-work-icon{
+	background-position: -338px -169px ;
+	width: 162px;
+	height: 162px;
+	margin-left:8px;
+	margin-bottom:5px;
+}
+
+.infrastructure-icon{
+	background-position: -504px -169px ;
+	width: 163px;
+	height: 162px;
+	margin-left:8px;
+}
+
+.main-contracting-icon{
+	background-position: -170px -168px ;
+	width: 162px;
+	height: 162px;
+	margin-left:8px;
+	margin-bottom:5px;
+}
+
+.main-contracting-info{
+	width: 335px;
+	height: 162px;
+	margin-bottom:5px;
+}
+
+
+
+
+.services-big-icon{
+	width: 162px;
+	height: 496px;
+	background-color:#ebf1f6;
+	background-position:center center;
+	background-repeat:no-repeat;
+}

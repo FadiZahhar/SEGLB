@@ -1,0 +1,94 @@
+.slice1, .slice2, .slice3, .slice4, .slice5, .slice6, .slice7, .slice8, .slice9, .slice10, .slice11, .slice12, .slice13, .slice14, .slice15{
+	background: url(sprites.png) no-repeat;
+}
+
+.slice1{
+	background-position: -206px -481px ;
+	width: 206px;
+	height: 194px;
+}
+
+.slice2{
+	background-position: -424px -489px ;
+	width: 206px;
+	height: 194px;
+}
+
+.slice3{
+	background-position: -6px -273px ;
+	width: 207px;
+	height: 194px;
+}
+
+.slice4{
+	background-position: -646px -306px ;
+	width: 208px;
+	height: 302px;
+}
+
+.slice5{
+	background-position: -697px -628px ;
+	width: 208px;
+	height: 158px;
+}
+
+.slice6{
+	background-position: -192px -138px ;
+	width: 207px;
+	height: 121px;
+}
+
+.slice7{
+	background-position: -196px -7px ;
+	width: 208px;
+	height: 123px;
+}
+
+.slice8{
+	background-position: -869px -210px ;
+	width: 211px;
+	height: 303px;
+}
+
+.slice9{
+	background-position: -231px -272px ;
+	width: 168px;
+	height: 195px;
+}
+
+.slice10{
+	background-position: -425px -318px ;
+	width: 209px;
+	height: 162px;
+}
+
+.slice11{
+	background-position: -864px -6px ;
+	width: 168px;
+	height: 192px;
+}
+
+.slice12{
+	background-position: -646px -8px ;
+	width: 207px;
+	height: 286px;
+}
+
+.slice13{
+	background-position: -427px -131px ;
+	width: 207px;
+	height: 177px;
+}
+
+.slice14{
+	background-position: -426px 0;
+	width: 209px;
+	height: 124px;
+}
+
+.slice15{
+	background-position: 0 -1px ;
+	width: 169px;
+	height: 196px;
+}
+

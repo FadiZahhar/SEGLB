@@ -1,0 +1,28 @@
+.contact-info, .contact-logo-icon, .contact-us-icon{
+	background: url(sprites.png) no-repeat;
+}
+
+.contact-form{
+	background-color: #eaf0f6;
+	width: 200%;
+	height: 500px;
+	margin-left: -11px;
+}
+
+.contact-info{
+	background-position: -170px 0;
+	width: 335px;
+	height: 162px;
+}
+
+.contact-logo-icon{
+	background-position: -512px 0;
+	width: 162px;
+	height: 162px;
+}
+
+.contact-us-icon{
+	background-position: 0 0;
+	width: 162px;
+	height: 162px;
+}

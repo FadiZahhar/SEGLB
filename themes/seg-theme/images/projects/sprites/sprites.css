@@ -1,0 +1,76 @@
+.projects-slice1, .projects-slice2, .projects-slice3, .projects-slice4, .projects-slice5, .projects-slice6, .projects-slice7, .projects-slice8, .projects-slice9, .projects-slice10, .projects-slice11, .projects-slice12{
+	background: url(sprites.png) no-repeat;
+}
+
+.projects-slice1{
+	background-position: -33px -304px ;
+	width: 206px;
+	height: 194px;
+}
+
+.projects-slice2{
+	background-position: -265px -304px ;
+	width: 206px;
+	height: 194px;
+}
+
+.projects-slice3{
+	background-position: -254px -507px ;
+	width: 207px;
+	height: 194px;
+}
+
+.projects-slice4{
+	background-position: -266px -176px ;
+	width: 208px;
+	height: 121px;
+}
+
+.projects-slice5{
+	background-position: -15px -129px ;
+	width: 207px;
+	height: 173px;
+}
+
+.projects-slice6{
+	background-position: -30px -506px ;
+	width: 208px;
+	height: 159px;
+}
+
+.projects-slice7{
+	background-position: -701px -4px ;
+	width: 208px;
+	height: 123px;
+}
+
+.projects-slice8{
+	background-position: -481px -174px ;
+	width: 418px;
+	height: 599px;
+}
+
+.projects-slice9{
+	background-position: -526px 0;
+	width: 170px;
+	height: 170px;
+}
+
+.projects-slice10{
+	background-position: -349px 0;
+	width: 171px;
+	height: 160px;
+}
+
+.projects-slice11{
+	background-position: -174px 0;
+	width: 171px;
+	height: 123px;
+}
+
+.projects-slice12{
+	background-position: 0 -1px ;
+	width: 171px;
+	height: 124px;
+}
+
