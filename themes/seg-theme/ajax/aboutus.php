@@ -6,7 +6,7 @@ require_once('../../../../wp-config.php');
 
 global $post;
 // get the parent bricks that are not inside a container brick
-$args = array( 'numberposts' => 99, 'category_name' => 'about-us', 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
+$args = array( 'numberposts' => 99, 'category_name' => 'aboutus', 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
 $parents = get_posts( $args );
 $meta = get_post_meta ($parents[0]->ID);
 $image = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'full');

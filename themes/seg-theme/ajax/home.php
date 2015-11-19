@@ -16,6 +16,15 @@ $childcat = get_categories(array('parent'=>$catid->term_id));
 $args = array( 'numberposts' => 99, 'category_name' => $childcat[0]->slug, 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
 $childs = get_posts( $args );
 
+// get the latest enws
+$args = array( 'numberposts' => 99, 'category_name' => 'news', 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
+$news = get_posts( $args );
+//echo "<pre>";
+//foreach($news as $latest):
+//print_r($latest);
+//endforeach;
+//exit;
+
 ?>
 <head>
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
@@ -100,39 +109,24 @@ $class = $class[0];
       <h1>SEG’s latest news</h1>
       <div class="newstape">
           <div class="newstape-content">
+            <?php
+            foreach($news as $latest):
+            ?>
               <div class="news-block">
-                  <h3>Lorem ipsum</h3>
-                  <small>13.04.2015</small>
+                  <h3><?= $latest->post_title ?></h3>
+                  <small><?= $latest->post_date ?></small>
                   <p class="text-justify">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                      <?= substr($latest->post_content, 0, 200); ?>
                   </p>
                   <div class="text-right">
-                      <a href="#">More</a>
+                      <a href="#news-<?= $latest->ID ?>">More</a>
                   </div>
                   <hr />
               </div>
-              <div class="news-block">
-                  <h3>Ut enim ad</h3>
-                  <small>13.04.2015</small>
-                  <p class="text-justify">
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                  </p>
-                  <div class="text-right">
-                      <a href="#">More</a>
-                  </div>
-                  <hr />
-              </div>
-              <div class="news-block">
-                  <h3>Duis aute</h3>
-                  <small>13.04.2015</small>
-                  <p class="text-justify">
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
-                  </p>
-                  <div class="text-right">
-                      <a href="#">More</a>
-                  </div>
-                  <hr />
-              </div>
+            <?php
+            endforeach;
+            ?>
+
           </div>
       </div>
 

@@ -37,10 +37,11 @@ $('#menu').slicknav({
     $(window).bind( 'hashchange', function(e) {
       var hash = window.location.hash;
       $('ul li').find('a').removeClass('current');
-      geteffectout();
+
       switch(hash) {
 
         case "#aboutus":
+        geteffectout();
         setTimeout(function()
           {
             getpage('aboutus');
@@ -49,7 +50,7 @@ $('#menu').slicknav({
         break;
 
         case "#network":
-
+        geteffectout();
         setTimeout(function()
           {
             getpage('network');
@@ -58,6 +59,7 @@ $('#menu').slicknav({
         break;
 
         case "#philosophy":
+        geteffectout();
         setTimeout(function()
           {
               getpage('philosophy');
@@ -65,6 +67,7 @@ $('#menu').slicknav({
         break;
 
         case "#ourteam":
+        geteffectout();
         setTimeout(function()
           {
               getpage('ourteam');
@@ -73,6 +76,7 @@ $('#menu').slicknav({
 
 
         case "#services":
+        geteffectout();
         setTimeout(function()
           {
             getpage('services');
@@ -81,6 +85,7 @@ $('#menu').slicknav({
         break;
 
         case "#projects":
+        geteffectout();
         setTimeout(function()
           {
               getpage('projects');
@@ -89,6 +94,7 @@ $('#menu').slicknav({
         break;
 
         case "#gallery":
+        geteffectout();
         setTimeout(function()
           {
               getpage('gallery');
@@ -97,6 +103,7 @@ $('#menu').slicknav({
         break;
 
         case "#projectscountries":
+        geteffectout();
         setTimeout(function()
           {
               getpage('projectscountries');
@@ -105,6 +112,7 @@ $('#menu').slicknav({
         break;
 
         case "#news":
+        geteffectout();
         setTimeout(function()
           {
               getpage('news');
@@ -113,6 +121,7 @@ $('#menu').slicknav({
         break;
 
         case "#careers":
+        geteffectout();
         setTimeout(function()
           {
             getpage('careers');
@@ -121,6 +130,7 @@ $('#menu').slicknav({
         break;
 
         case "#contactus":
+        geteffectout();
         setTimeout(function()
           {
             getpage('contactus');
@@ -128,11 +138,20 @@ $('#menu').slicknav({
           $('a[href=#contactus]').addClass('current');
         break;
 
+
         default:
+        var news_id = hash.split("-");
+        if(news_id[1]!=undefined) {
+          geteffectout();
+          getpage('news');
+        }
+        else {
+        geteffectout();
         setTimeout(function()
           {
             getpage('home');
           }, 1000);
+        }
         break;
 
       }

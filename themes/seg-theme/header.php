@@ -79,15 +79,16 @@
 			<li><a href="#contactus">Contact us</a></li>
 </ul>
 		<header>
+			<?php
+			$categories = get_categories( array('parent' => 0, 'exclude' => 2) );
+			 ?>
 			<a href="#home"><div class="logo">&nbsp;</div></a>
 				<ul>
-					<li><a href="#aboutus">About us</a></li>
-					<li><a href="#network">Network</a></li>
-					<li><a href="#services">Services</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="#news">News</a></li>
-					<li><a href="#careers">Careers</a></li>
-					<li><a href="#contactus">Contact us</a></li>
+					<?php foreach($categories as $category):
+					?>
+					<li><a href="#<?= $category->slug ?>"><?= $category->cat_name ?></a></li>
+					<?php
+					endforeach; ?>
 				</ul>
 
 		</header>

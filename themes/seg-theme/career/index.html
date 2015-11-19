@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+
+	<title>Yamen - Career Page</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">-->
+  <link rel="stylesheet" href="css/jquery.realperson.css">
+	<link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
+	<link rel="stylesheet" type="text/css" href="resources/demo.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css" />
+  <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+<link rel="stylesheet" href="css/jquery.fileupload.css">
+
+    
+	<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+
+	<!--<script type="text/javascript" language="javascript" src="resources/demo.js"></script>-->
+	 <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+<link rel="stylesheet" href="css/jquery.fileupload.css">
+	  <script src="js/jquery.fancybox.pack.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" class="init">
+
+
+$(document).ready(function() {
+	$('button').on('click',function(){
+	$('form').show();
+	$('body,html').animate({ scrollTop: $('body').height() }, 500);
+	$('#first_name').focus();
+	});
+	/*$('#example').dataTable();
+	
+	$('#example tbody').on('click', 'tr', function () {
+		var name = $('td', this).eq(0).text();
+		//alert( 'You clicked on '+name+'\'s row' );
+		
+	} );*/
+} );
+
+
+	</script>
+</head>
+
+<body class="dt-example">
+	<!--<div class="container">
+		<section>
+			<h1>Careers</h1>
+
+
+				
+				<article>
+					<img src="images/career.jpg" /><br/>
+					<h3>Apply NOW & Presume a range of challenges and prospects to stretch your practical and software skills to better develop an extra-ordinary experience here at Yamen.</h3>
+					<p>Yamen's work environment is of great importance especially to its valued employees. From there on, facilities and amenities are supplied to provide a healthy work environment free from flows and disruption in order to be able to invest the best out of your capabilities.</p>
+					<p>We pride ourselves on possessing a culture that gives everyone the opportunity to shape their future of success to reach higher levels professionalism.</p>
+					<h4>We are completely devoted to recruiting and retaining the premium talent to encounter and surpass the requirements of all our business units and customer’s request</h4>
+				</article>
+
+
+			
+
+			
+
+		
+		</section>-->
+    <button>Click Here To Apply for a postion at Yamen</button>
+
+		<section id="career-form">
+			
+			<form id="myForm">
+<!--<h6>Please Fill The Below Form in order to apply for futur openings</h6>-->
+<h6>&nbsp;</h6>
+				<div class="single-row">
+					<div class="label name">Name *</div><div class="field">
+					<input type="text" name="first_name" id="first_name" class="form-field" placeholder="" tabindex="1">
+					</div>
+				</div>
+
+
+				<div class="single-row">
+					<div class="label address">Address</div><div class="field">
+					<input type="text" name="address" id="address" class="form-field" placeholder="" tabindex="2">
+					</div>
+				</div>
+
+
+				<div class="single-row">
+					<div class="label telephone">Telephone</div><div class="field">
+					<input id="code" name="code" class="form-field" placeholder="" value="" tabindex="3">
+					<input id="phone" name="phone" class="form-field" placeholder="" value="" tabindex="4"> 
+					</div>
+				</div>
+
+
+				<div class="single-row">
+					<div class="label email">Email *</div><div class="field">
+					<input id="email" type="email" name="email" class="form-field" placeholder="" value="" tabindex="5">
+					</div>
+				</div>
+
+
+				<div class="single-row">
+					<div class="label employmenttype">Employment Type *</div><div class="field employmenttype">
+
+					</div>
+				</div>
+
+
+				<div class="single-row">
+
+
+					<div class="box-module">
+
+
+
+
+          </div>
+					<div class="label desired">Desired Job *</div><div class="field desiredjob">
+					
+					
+					
+
+
+					</div>
+          <input id="desiredjob" type="hidden" name="desiredjob" class="form-field" placeholder="" value="" tabindex="7" style="width:95%;display:inline;" />
+				</div>
+
+
+				<div class="single-row">
+					<div class="label years">Years Of Experience</div><div class="field">
+					<input id="yearsexperience" type="text" name="yearsexperience" class="form-field" placeholder="" value="" tabindex="8">
+					</div>
+				</div>
+
+				<div class="single-row">
+					<div class="label salary">Desired Salary</div><div class="field">
+					<input tyle="text" id="salary" name="salary" class="form-field" tabindex="9"/>
+				</div>
+				</div>
+				<div class="single-row">
+					<div class="label special uploadcv">Upload Your CV *</br><span>(doc or pdf)</span></div><div class="field special">
+          <!-- The fileinput-button span is used to style the file input field as button -->
+    
+    <!-- The global progress bar -->
+    <div id="progress" class="progress">
+        <div class="progress-bar progress-bar-success"></div>
+    </div>
+
+    <div class="container">
+    
+    <div class="browse"><span class="btn btn-success fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Browse</span>
+        <!-- The file input field used as target for the file upload widget -->
+        <input id="fileupload" type="file" tabindex="10" name="files[]" multiple>
+    </span></div>
+
+    <!-- The global progress bar -->
+    <div id="progress" class="progress">
+        <div class="progress-bar progress-bar-success"></div>
+    </div>
+    <!-- The container for the uploaded files -->
+    <div id="files" class="files" style="float:left"></div>
+    <br>
+    
+</div>
+					
+
+					</div>
+				</div>
+
+        <div class="single-row">
+          <div class="label captcha">&nbsp;</span></div>
+          <div class="field field2">
+            <input id="captcha" type="text" name="captcha" placeholder="" value="" tabindex="9">
+          <input type="button" class="submit" value="submit" /><img src="img/loading.gif" width="32" height="32" class="loader" style="float:right;display:none;" />
+        </div>
+
+        </div>
+        <input id="filename" type="hidden" name="filename" placeholder="" value="">
+			</form> 
+
+			<br/><br/><br/><br/>
+		</section>
+	</div>
+
+<script src="js/vendor/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'> -->
+   <!-- <script src="js/jquery.googleSuggest.js" type="text/javascript"></script> -->
+
+    <script src="js/vendor/modernizr.js"></script>
+
+<script src="js/vendor/jquery.ui.widget.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="js/jquery.iframe-transport.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="js/jquery.fileupload.js"></script>
+    <!--<script src="js/tinymce/tinymce.min.js"></script>
+    <script src="js/tinymce/jquery.tinymce.min.js"></script>-->
+    <script src="js/jquery.plugin.min.js"></script>
+    <script src="js/jquery.realperson.min.js"></script>
+
+    <script language="javascript">
+
+    var erroMsg;
+    var errlist = [];
+    function validateForm() {
+      var flag = true;
+
+      if($('#first_name').val() == "") {
+        flag = false;
+        $('.label.name').css('color','red');
+        errlist.push('first name');
+      }
+
+      /* if($('#address').val() == "") {
+        flag = false;
+        $('.label.address').css('color','red');
+        errlist.push('address');
+      }
+
+      if($('#phone').val() == "") {
+        flag = false;
+        $('.label.telephone').css('color','red');
+        errlist.push('telephone');
+      }*/
+
+       if($('#email').val() == "" || !validateEmail($('#email').val())) {
+        flag = false;
+        $('.label.email').css('color','red');
+        errlist.push('email');
+      }
+
+      if($('#desiredjob').val() == "") {
+        flag = false;
+        $('.label.desired').css('color','red');
+        errlist.push('desired job');
+      }
+
+      if($('#yearsexperience').val() == "") {
+        flag = false;
+        $('.label.years').css('color','red');
+        errlist.push('years of experience');
+      }
+
+      /*if($('#salary').val() == "") {
+        flag = false;
+        $('.label.salary').css('color','red');
+        errlist.push('years of experience');
+      }*/
+
+      if($('#captcha').val() == "") {
+        flag = false;
+        $('#captcha').css('background-color','red');
+        errlist.push('Captcha');
+      }
+
+      if ($('input[name=jobtype]:checked', '#myForm').val() == undefined) {
+
+        flag = false;
+      $('.label.employmenttype').css('color','red');
+        errlist.push('Job Expected');
+    }
+
+    if($('#files').html() == "") {
+       flag = false;
+        $('.label.uploadcv').css('color','red');
+        errlist.push('Upload CV');
+    }
+    
+
+
+      if(flag==false) {
+        $('h6').css('color','red');
+        //erroMsg = 'Kindly fill the unvalid fileds in red below (' + displayList(errlist) + ')';
+        erroMsg = 'Kindly fill the required fields';
+        $('h6').html(erroMsg);
+        errlist = [];
+      }
+
+      return flag;
+
+    }
+
+
+Array.prototype.clean = function(deleteValue) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] == deleteValue) {         
+      this.splice(i, 1);
+      i--;
+    }
+  }
+  return this;
+};
+
+    function displayList(list) {
+    	var cleanlist;
+    	if(list.length == 0 ) {
+        cleanlist = '';
+    		console.log("List is empty");
+    	} else {
+        cleanlist = '';
+    		list.clean(undefined);
+    		for(var i =0; i< list.length; i++) {
+    				if(i == 0) {
+    					cleanlist = list[i];
+    				} else {
+    					cleanlist += ", " + list[i];;
+    				}
+    				
+    			}
+    		}
+    		
+    	return cleanlist;
+    }
+
+
+
+    function deleteList(name,list) {
+    	if(list.length == 0) {
+    		console.log("List is empty!");
+    	} else {
+    		for (var i = 0; i < list.length; i++) {
+    			if(list[i] == name) {
+    				list[i] = undefined;
+    				return list;
+    			} else if (i == list.length -1) {
+    				console.log("Passenger not found!")
+    			}
+    		}
+    	}
+    	return list;
+    }
+
+    // Function that validates email address through a regular expression.
+function validateEmail(sEmail) {
+var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+if (filter.test(sEmail)) {
+return true;
+}
+else {
+return false;
+}
+}
+function focus_out(obj) {
+            $('.desiredjob').html($('.desiredjob').html()+ " : " + $(obj).val());
+            $('input#desiredjob').val($('input#desiredjob').val()+ " : " + $(this).val());
+           };
+
+        $(document).ready(function(){
+
+          $.getJSON('../customcms/index.php',function(result0) {
+            var val = '<img class="close" src="img/close.svg" onclick="$(\'.box-module\').hide();" style="float:right;top:100px;cursor:pointer;margin-right:2px;" />';
+            var cnt;
+            $.each(result0,function(index,item){
+              cnt = index;
+              val +='<div class="bordered"><input type="checkbox" id="option'+cnt+'" name="option'+cnt+'" value="'+item.name+'" /><label for="option'+cnt+'">'+item.name+'</label></div>'
+            });
+            cnt++;
+            val += '<div class="bordered"><input type="checkbox" id="option'+cnt+'" name="option'+cnt+'" value="Other" onclick="$(\'#other\').show();" /><label for="option'+cnt+'">Other</label></div><input type="text" name="other" id="other" class="full" placeholder="Other Job" tabindex="1" onblur="focus_out(this)">';
+            $('.box-module').html(val);
+
+                       $('input[type="checkbox"]').on('click',function(){
+            
+            if($(this).is(":checked")) {
+               checked.push($(this).val());
+        
+            }
+            else {
+              checked = deleteList($(this).val(),checked);
+            }
+            //console.log(displayList(checked));
+            $('.desiredjob').html(displayList(checked));
+            $('input#desiredjob').val(displayList(checked));
+           });
+          })
+
+          $.getJSON('../customcms/index.php/jobtype',function(result1) {
+            var val2 = '';
+            $.each(result1,function(index,item){
+              val2 += '<input type="radio" name="jobtype" value="'+item.title+'" />'+item.title
+            });
+            $('.field.employmenttype').html(val2);
+          });
+
+          /*if ($.browser.mozilla) {
+            alert('here');
+            //$('input#captcha').css('margin-left','-108px');
+          }*/
+        	var bool = true;
+        	var checked = [];
+          
+           //$('#first_name').googleSuggest();
+           //$('#address').googleSuggest();
+           $('#phone').inputmask('999-999');
+           $('#code').inputmask('(+999)-(99)');
+           $('#yearsexperience').inputmask('99');
+           $('#salary').inputmask('9999$');
+           $('#captcha').realperson();
+           
+
+           /*$('.combo').on('click',function(){
+
+       		 $('.box-module').toggle();
+
+           });*/
+          $('input.submit').on('click',function(){
+            $('.box-module').hide();
+            $('.label').css('color','black');
+            if(validateForm()) {
+              $(this).hide();
+              $('.loader').show();
+
+              $.ajax('../customcms/index.php/sendemail/', {
+                type: 'POST',
+                data: $('form').serialize(),
+                success: function(result) {
+                  $('button').hide();
+                  $('#career-form').html('<h6>Thank you for submitting your CV, we will contact you in 48 hours</h6><br/><br/><br/>');
+                }
+});
+
+
+            }
+          });
+
+           $('.desiredjob').on('click',function(){
+
+           $('.box-module').toggle();
+
+           });
+
+         
+           
+           $('#yearsexperience').on('click',function(){
+            $('.box-module').hide();
+           });
+
+           $('#salary').on('click',function(){
+            $('.box-module').hide();
+           });
+
+           
+        }); 
+        </script>
+  <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+  <!--<script src="js/jquery.validate.min.js" type="text/javascript"></script>-->
+  <script src="js/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+
+ 
+
+
+
+
+
+
+<script>
+/*jslint unparam: true */
+/*global window, $ */
+$(function () {
+    'use strict';
+    // Change this to the location of your server-side upload handler:
+    var url = 'php/';
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+                if($('#filename').val() == "") {
+                  $('#filename').val(file.name);
+                }
+                else {
+                  $('#filename').val($('#filename').val() + "," + file.name);
+                }
+            });
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+});
+</script>
+</body> 
+</body>
+</html>
