@@ -65,53 +65,168 @@ button.action.action--close {
 }
 
 .description--preview {
-  top:-180px!important;
+  top:-50px!important;
+}
+
+.description--preview p {
+	font-size: 0.65em;
+	max-width: 80%!important;
+	text-align: justify;
+}
+
+.description2 p {
+	font-size:11px;
+	max-width: 80%!important;
+	text-align: justify;
 }
 </style>
+
+<style>
+
+
+/* -------------------- Select Box Styles: bavotasan.com Method (with special adaptations by ericrasch.com) */
+/* -------------------- Source: http://bavotasan.com/2011/style-select-box-using-only-css/ */
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+
+/* -------------------- Rounded Corners */
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+/* -------------------- Colors: Background */
+.slate   { background-color: #ddd; }
+.green   { background-color: #779126; }
+.blue    { background-color: #004b93; }
+.yellow  { background-color: #eec111; }
+.black   { background-color: #000; }
+
+/* -------------------- Colors: Text */
+.slate select   { color: #000; }
+.green select   { color: #fff; }
+.blue select    { color: #fff; }
+.yellow select  { color: #000; }
+.black select   { color: #fff; }
+
+
+/* -------------------- Select Box Styles: danielneumann.com Method */
+/* -------------------- Source: http://danielneumann.com/blog/how-to-style-dropdown-with-css-only/ */
+#mainselection select {
+   border: 0;
+   color: #EEE;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: 378px;
+   *width: 350px;
+   *background: #58B14C;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px #330033;
+   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+}
+
+
+/* -------------------- Select Box Styles: stackoverflow.com Method */
+/* -------------------- Source: http://stackoverflow.com/a/5809186 */
+select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
+
+select#soflow-color {
+   color: #fff;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
+
+select option {
+    margin:40px;
+    background: #004b93;
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+    width: 240px;
+}
+
+​
+    </style>
 <script src="<?= get_template_directory_uri(); ?>/projects/js/modernizr-custom.js"></script>
 <script type="text/javascript" src="<?= get_template_directory_uri(); ?>/example/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="<?= get_template_directory_uri(); ?>/freewall.js"></script>
 
   <div class="">
+    <div class="styled-select blue rounded" style="margin-left:20px;">
+      <select id="countrylist">
+        <option value="0">All projects</option>
+        <?php foreach($childcat as $cat): ?>
+        <option value="<?= $cat->cat_ID ?>"><?= $cat->name ?></option>
+        <?php  endforeach; ?>
+      </select>
+    </div>
     <div class="grid">
-      <?php
-      foreach($parents as $parent):
-        // get the image
-        $meta = get_post_meta ($parent->ID);
-        $full = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'full');
 
-        $medium = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'medium');
-        $images = $dynamic_featured_image->get_featured_images($parent->ID);
-        // get the brick class
-        $class = $meta['project_image_size'];
-       ?>
-      <div class="grid__item" data-size="<?= $class[0] ?>">
-        <a href="<?= $full[0] ?>" class="img-wrap"><img src="<?= $medium[0] ?>" alt="<?= $parent->post_title ?>" />
-          <div class="description2">
-            <h3><?= $parent->post_title ?></h3>
-            <p><?= substr($parent->post_content, 0, 100); ?></p>
-          </div>
-          <div class="description description--grid">
-            <div class="thumb-container">
-              <ul>
-            <?php
-            foreach($images as $image):
-            ?>
-                <li style="cursor:pointer"><img src="<?= $image['thumb'] ?>" width="100" height="80" onclick="getimg('<?= $image['full'] ?>')"/></li>
-            <?php
-            endforeach;
-             ?>
-              </ul>
-            </div>
-            <h3><?= $parent->post_title ?></h3>
-            <p><?= $parent->post_content ?></p>
-
-          </div>
-        </a>
-      </div>
-      <?php
-      endforeach;
-      ?>
 
     </div>
     <!-- /grid -->
@@ -129,10 +244,50 @@ button.action.action--close {
 <script src="<?= get_template_directory_uri(); ?>/projects/js/classie.js"></script>
 <script src="<?= get_template_directory_uri(); ?>/projects/js/main.js"></script>
 <script>
+
 function getimg(img_url) {
   $('img.original').attr('src',img_url);
 }
   (function() {
+
+    $('#countrylist').on('change',function(e){
+      // change the url to projects-id hashtag
+      window.location.hash = '#projects-'+$('#countrylist').val();
+    });
+
+  })();
+</script>
+<script>
+$(function () {
+    'use strict';
+
+    var hash = window.location.hash;
+    var cat_id = hash.split("-");
+    var url = '';
+
+    if(cat_id[1]==undefined) {
+      // put the default code that should display first.
+      url = '<?= get_template_directory_uri(); ?>/ajax/ajax.php?cat_id=0&rand='+Math.random();
+    }
+    else {
+      url = '<?= get_template_directory_uri(); ?>/ajax/ajax.php?cat_id='+cat_id[1]+'&rand='+Math.random();
+      // set the combo box value
+      $('#countrylist').val(cat_id[1]);
+    }
+
+    $.ajax({
+    url: url,
+    data: {
+    format: 'html'
+    },
+    error: function() {
+    alert('error');
+    },
+    dataType: 'html',
+    success: function(data) {
+    $('.grid').html(data);
+
+
     var support = { transitions: Modernizr.csstransitions },
       // transition end event name
       transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
@@ -187,5 +342,24 @@ function getimg(img_url) {
         });
       }
     });
-  })();
+
+
+    },
+    type: 'GET'
+    });
+
+
+
+
+
+// possible code to be rewritten to initialized
+
+
+
+
+
+
+
+
+});
 </script>

@@ -420,3 +420,55 @@ footer {
 }
 
 .newstape-drag { cursor: ns-resize; }
+
+// Search css code
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+/*-------------------------------------*/
+@search-size: 30px;
+@search-expanded-size: 200px;
+@search-text-color: #fff;
+@search-border-color: #004b93;
+@search-normal-bg: #004b93;
+@search-active-bg: #004b93;
+@search-active-border-color: #004b93;
+
+/*-------------------------------------*/
+form#search {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+/*-------------------------------------*/
+#search label,
+#search input[type=submit] { display: none; }
+
+/*-------------------------------------*/
+#search input[type=text]{
+  padding: 0;
+  margin: 0;
+  border: 1px solid @search-border-color;
+  border-radius: @search-size;
+  height: @search-size;
+  width: @search-size;
+  outline: none;
+  color: @search-text-color;
+  font-size: 1em;
+  font-family: inconsolata, monospace;
+  text-indent: @search-size;
+  text-shadow: 0 1px 0 rgba(0,0,0,.4);
+  background: @search-normal-bg url() no-repeat 0 0;
+	transition: all .4s ease;
+  box-shadow: 0 2px 0 rgba(0,0,0,.3),
+              0 0 2px rgba(255,255,255,.3),
+              inset 0 1px 10px rgba(0,0,0,0.6);
+}
+
+#search input[type=text]:focus {
+  box-shadow: 0 2px 0 rgba(0,0,0,.3),
+              0 0 2px rgba(255,255,255,.3),
+              inset 0 0px 0px rgba(0,0,0,0.3);
+  background-color: @search-active-bg;
+	width: @search-expanded-size;
+}

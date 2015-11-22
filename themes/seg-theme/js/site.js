@@ -140,6 +140,11 @@ $('#menu').slicknav({
 
 
         default:
+        if(hash.indexOf("projects-") > -1) {
+          geteffectout();
+          getpage('projects');
+          return;
+        }
         var news_id = hash.split("-");
         if(news_id[1]!=undefined) {
           geteffectout();
