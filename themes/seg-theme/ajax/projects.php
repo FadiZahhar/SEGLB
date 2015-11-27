@@ -219,7 +219,6 @@ select option {
   <div class="">
     <div class="styled-select blue rounded" style="margin-left:20px;">
       <select id="countrylist">
-        <option value="0">All projects</option>
         <?php foreach($childcat as $cat): ?>
         <option value="<?= $cat->cat_ID ?>"><?= $cat->name ?></option>
         <?php  endforeach; ?>
@@ -285,7 +284,7 @@ $(function () {
     },
     dataType: 'html',
     success: function(data) {
-    $('.grid').html(data);
+    $.when($('.grid').html(data)).done(function( x ) {
 
 
     var support = { transitions: Modernizr.csstransitions },
@@ -342,7 +341,7 @@ $(function () {
         });
       }
     });
-
+}); // end of when
 
     },
     type: 'GET'

@@ -34,6 +34,26 @@ $('#menu').slicknav({
 });
      }
 
+
+     function getabout(id) {
+       $.ajax({
+  url: 'http://localhost/segwordpress/wp-content/themes/seg-theme/ajax/aboutus.php?id='+id+'&rand='+Math.random(),
+  data: {
+     format: 'html'
+  },
+  error: function() {
+     //$('#info').html('<p>An error has occurred</p>');
+  },
+  dataType: 'html',
+  success: function(data) {
+    $.LoadingOverlay("hide");
+     $('.grids-slider').html(data);
+       geteffect('aboutus');
+  },
+  type: 'GET'
+});
+     }
+
     $(window).bind( 'hashchange', function(e) {
       var hash = window.location.hash;
       $('ul li').find('a').removeClass('current');
@@ -57,23 +77,6 @@ $('#menu').slicknav({
           }, 1000);
           $('a[href=#network]').addClass('current');
         break;
-
-        case "#philosophy":
-        geteffectout();
-        setTimeout(function()
-          {
-              getpage('philosophy');
-          }, 1000);
-        break;
-
-        case "#ourteam":
-        geteffectout();
-        setTimeout(function()
-          {
-              getpage('ourteam');
-          }, 1000);
-        break;
-
 
         case "#services":
         geteffectout();
@@ -143,6 +146,12 @@ $('#menu').slicknav({
         if(hash.indexOf("projects-") > -1) {
           geteffectout();
           getpage('projects');
+          return;
+        }
+        if(hash.indexOf("aboutus-") > -1) {
+          var id = hash.split("-");
+          geteffectout();
+          getabout(id[1]);
           return;
         }
         var news_id = hash.split("-");

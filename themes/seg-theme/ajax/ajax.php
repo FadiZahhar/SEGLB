@@ -27,7 +27,7 @@ endif;
 if(isset($_REQUEST["cat_id"])):
 
   if($_REQUEST["cat_id"]==0) {
-    $args = array( 'numberposts' => 99, 'category_name' => 'projects', 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
+    $args = array( 'numberposts' => 99, 'category_name' => 'intro', 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
     $parents = get_posts( $args );
   }
   else {

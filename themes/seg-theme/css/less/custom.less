@@ -314,14 +314,18 @@ h1.title {
 ul.menu {
   li {
     font-size:20px;
-    text-decoration:underline;
+    /*text-decoration:underline;*/
     font-size:18px;
     text-transform:uppercase;
     color:#fff;
     line-height:2.5;
     cursor:pointer;
-  &:hover, &.current {
-    color:#00ff03;
+    a {
+      text-decoration:none;
+    }
+  &:hover, & > a.current, & > a:visited {
+    text-decoration:underline;
+    color:#00ff03!important;
   }
 
   }

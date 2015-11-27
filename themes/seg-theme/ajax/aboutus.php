@@ -2,15 +2,29 @@
 require_once('../../../../wp-config.php');
 
 
-
-
 global $post;
-// get the parent bricks that are not inside a container brick
+// the parents is the left navigation
 $args = array( 'numberposts' => 99, 'category_name' => 'aboutus', 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
 $parents = get_posts( $args );
-$meta = get_post_meta ($parents[0]->ID);
+// if the id is set get the post by id
+if(isset($_REQUEST["id"])) {
+$parent = get_post ($_REQUEST["id"]);
+$meta = get_post_meta ($parent->ID);
 $image = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'full');
-$icons = $dynamic_featured_image->get_featured_images($parents[0]->ID);
+$icons = $dynamic_featured_image->get_featured_images($parent->ID);
+$content = explode("<br/>",$parent->post_content);
+$title = $parent->post_title;
+//echo "here"; echo "<pre>"; print_r($parents); exit;
+}
+else {
+
+  $meta = get_post_meta ($parents[0]->ID);
+  $image = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'full');
+  $icons = $dynamic_featured_image->get_featured_images($parents[0]->ID);
+  $content = explode("<br/>",$parents[0]->post_content);
+  $title = $parents[0]->post_title;
+}
+//echo "<pre>"; print_r($parents);exit;
 // get the id of the parent category to be able to search for shild categories
 //$catid = get_category_by_slug('services');
 //$childcat = get_categories(array('parent'=>$catid->term_id));
@@ -18,7 +32,7 @@ $icons = $dynamic_featured_image->get_featured_images($parents[0]->ID);
 // get the child bricks inside of a container brick
 //$args = array( 'numberposts' => 99, 'category_name' => $childcat[0]->slug, 'orderby' => 'menu_order', 'order' => 'asc', 'post_status' => 'publish' );
 //$childs = get_posts( $args );
-$content = explode("<br/>",$parents[0]->post_content);
+
 ?>
 <head>
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
@@ -119,9 +133,13 @@ ul.ulcontent > li {
 
     <h1 class="title">About Us</h1>
     <ul class="menu">
-      <li class="current"><?= $parents[0]->post_title ?></li>
-      <li onclick="document.location.href='#philosophy'"><?= $parents[1]->post_title ?></li>
-      <li onclick="document.location.href='#ourteam'"><?= $parents[2]->post_title ?></li>
+      <?php
+      foreach($parents as $parent):
+       ?>
+      <li><a href="#aboutus-<?= $parent->ID ?>"><?= $parent->post_title ?></a></li>
+      <?php
+      endforeach;
+      ?>
     </ul>
 
     <div>
@@ -140,7 +158,7 @@ ul.ulcontent > li {
 <ul class="ulcontent">
     <li style="background:url('<?= $icons[0]['full'] ?>') no-repeat; background-position:10px 10px">
     <div class="row">
-      <h1><?= $parents[0]->post_title ?>
+      <h1><?= $title ?>
         <div class="brline" >&nbsp;</div>
       </h1>
 
@@ -169,3 +187,24 @@ ul.ulcontent > li {
   <div class="clear"> </div>
 
 <div class="clear"> </div>
+<!-- used to set the current selected menu to be hilighted -->
+<script>
+$(function () {
+    'use strict';
+
+    var hash = window.location.hash;
+    var id = hash.split("-");
+
+    $('a').removeClass('current');
+    $('ul > li > a[href=#aboutus]').addClass('current');
+
+    if(id[1]==undefined) {
+      $('ul.menu > li:first-child').find('a').addClass('current');
+    }
+else {
+
+    $('a[href='+hash+']').addClass('current');
+  }
+
+  });
+</script>

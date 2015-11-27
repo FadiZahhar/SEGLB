@@ -20,6 +20,15 @@ $image = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'full');
 
 ?>
 <head>
+  <style>
+  iframe {
+    overflow: hidden;
+    border:none;
+    width:100%;
+    max-width:1000px;
+    max-height:600px;
+  }
+  </style>
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 </head>
 <div class="grids-slider-grid-row2">
@@ -27,7 +36,8 @@ $image = wp_get_attachment_image_src( $meta['_thumbnail_id'][0], 'full');
 
     <h1 class="title"><?= $parents[0]->post_title ?></h1>
 
-    <img src="<?= $image[0] ?>" class="map1" />
+    <!-- <img src="<?= $image[0] ?>" class="map1" /> -->
+    <iframe src="<?= get_template_directory_uri(); ?>/maps/map.html" width="100%" height="600" scrolling="no" />
 
 
   </div>
